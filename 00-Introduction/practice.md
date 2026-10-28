@@ -1,0 +1,1 @@
+# Make a simple character with a different sprite and controls.
