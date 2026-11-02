@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bo3f6oo4po3bm"]
+
+[ext_resource type="PackedScene" uid="uid://cn7up6dhjbcvl" path="res://scenes/player.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bgbjmv5olj366" path="res://scenes/platform.tscn" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://ddx1sw2dkye7y" path="res://assets/floor.png" id="3_tbgi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
+size = Vector2(1855, 246)
+
+[node name="Level_1" type="Node2D" unique_id=1239498415]
+
+[node name="Player" parent="." unique_id=2048125100 instance=ExtResource("1_sugp2")]
+position = Vector2(-87, 459)
+
+[node name="Platform" parent="." unique_id=1360029994 instance=ExtResource("2_jyhfs")]
+position = Vector2(1086, 304)
+
+[node name="Platform2" parent="." unique_id=1201557075 instance=ExtResource("2_jyhfs")]
+position = Vector2(860, 406)
+
+[node name="Platform3" parent="." unique_id=134112871 instance=ExtResource("2_jyhfs")]
+position = Vector2(623, 534)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=222370251]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=1258221047]
+position = Vector2(609, 728)
+texture = ExtResource("3_tbgi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1910036429]
+position = Vector2(604.5, 720)
+shape = SubResource("RectangleShape2D_tefeu")
