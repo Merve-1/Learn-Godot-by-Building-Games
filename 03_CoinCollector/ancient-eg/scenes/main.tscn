@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bkw7tlalvybb"]
+
+[ext_resource type="Script" uid="uid://cxpo1kue4krq8" path="res://scripts/main.gd" id="1_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://fkpd7mtk50ic" path="res://scenes/player.tscn" id="1_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bjqnsefc8bx4o" path="res://assets/background.png" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cmoibxcqrm4e1" path="res://scenes/platform.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cvuqay06anhxk" path="res://scenes/coin.tscn" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://c6n5la3t3m2yq" path="res://assets/floor.png" id="3_tbgi4"]
+[ext_resource type="FontFile" uid="uid://dw7ojio0rtlem" path="res://assets/fonts/Kenney Pixel Square.ttf" id="7_tipki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
+size = Vector2(1169, 111)
+
+[sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
+font = ExtResource("7_tipki")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D" unique_id=1205033412]
+script = ExtResource("1_o6xl0")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=364671185]
+position = Vector2(684.00006, 350.00003)
+scale = Vector2(1.3974283, 1.5023911)
+texture = ExtResource("1_tbgi4")
+
+[node name="Player" parent="." unique_id=437222336 groups=["player"] instance=ExtResource("1_sugp2")]
+position = Vector2(96, 435)
+
+[node name="Platform" parent="." unique_id=909826472 instance=ExtResource("2_jyhfs")]
+position = Vector2(404, 583)
+
+[node name="Platform2" parent="." unique_id=1215329231 instance=ExtResource("2_jyhfs")]
+position = Vector2(747, 498)
+
+[node name="Platform3" parent="." unique_id=215615006 instance=ExtResource("2_jyhfs")]
+position = Vector2(1081, 419)
+
+[node name="Coin2" parent="." unique_id=82617163 instance=ExtResource("3_jyhfs")]
+position = Vector2(1071, 307)
+
+[node name="Coin" parent="." unique_id=2026280889 instance=ExtResource("3_jyhfs")]
+position = Vector2(384, 480)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=2011989816]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=240593811]
+position = Vector2(580, 688.99994)
+scale = Vector2(0.6261052, 0.4125683)
+texture = ExtResource("3_tbgi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1940752309]
+position = Vector2(581.5, 686.5)
+shape = SubResource("RectangleShape2D_tefeu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=553950899]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=163518271]
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 266.0
+offset_bottom = 88.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_85g3d")
+
+[connection signal="collected" from="Coin2" to="." method="_on_coin_collected"]
+[connection signal="collected" from="Coin" to="." method="_on_coin_collected"]

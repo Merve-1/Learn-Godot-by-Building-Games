@@ -1,4 +1,9 @@
-# Godot Foundations & Player Input
+# 🎮 Godot Session: Foundations & Player Input
+
+Engine: Godot 4\
+Level: Beginner\
+Project: Player Input
+
 **Building Your First Interactive 2D Player**
 
 - Introduction to the Godot game engine

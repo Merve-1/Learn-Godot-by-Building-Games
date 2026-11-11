@@ -1,3 +1,9 @@
+# 🎮 Godot Session: Physics, Jumping & Platforms
+
+Engine: Godot 4\
+Level: Beginner\
+Project: Gravity, jumping, and platforms
+
 # Part 1: Understanding Physics in Godot
 
 ## Why Does a Character Fall Through the Floor?
@@ -246,7 +252,7 @@ Increases downward velocity over time while the player is airborne.
 
 **`move_and_slide()`**
 Moves the character using its velocity and handles collisions with the environment.
-![alt text](explainationImages/image4.png)
+![alt text](test/explainationImages//image4.png)
 
 Run the scene.
 
